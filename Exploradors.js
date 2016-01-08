@@ -31,7 +31,7 @@ function comencar(){
 	var i;
 	Net=new Object();
 	Net.matrix=[];
-	for (i=1; i<33; i++){
+	for (i=1; i<35; i++){
 		Net.matrix.push([]);
 		for (j=0; j<12; j++){
 			Net.matrix[i-1].push(0);

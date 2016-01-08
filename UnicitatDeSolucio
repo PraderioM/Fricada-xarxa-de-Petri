@@ -4,7 +4,7 @@ param transitionname{Transitions};
 param finalmarking{1..17};
 param matrix{1..17 cross 1..13};
 var transitions{Transitions}>=0, integer;
-#Si minimitzem la funció en comptes de maximitzarla i obtenim el mateix resultat aleshores el resultat és únic llevat de perutacions.
+#Si minimitzem la funció en comptes de maximitzarla, obtenim el mateix resultat i repeti el procediment maximitzant i minimitzant el nombre de vegades a disparar totes les transicións possibles obtenint sempre el mateix resultat aleshores el resultat és únic llevat de perutacions.
 minimize z: transitions['FerBirres'];
 
 subject to

@@ -5,9 +5,12 @@ param finalmarking{1..17};
 param matrix{1..17 cross 1..13};
 var transitions{Transitions}>=0, integer;
 
+#maximitzem el teps lliure del que disposarem una vegada acabat el treball (o sigui la quantitat de vegades que es dispararà la transició 'FerBirres').
+
 maximize z: transitions['FerBirres'];
 
 subject to
+#imposem que les transicions a disparar ens porti desde l'estat inicial a l'estat final o sigui que siguin solució de m=m_o+C*x on m és el marcat final, m_0 el marcat inicial i C la matriu d'incidència.
 gettotheend{i in 1..17}: sum{j in Transitions}matrix[i,transitionname[j]]*transitions[j]=finalmarking[i]-initialmarking[i];
 
 solve;
